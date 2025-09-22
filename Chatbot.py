@@ -12,14 +12,14 @@ class SimpleChatbot:
         
     def greet_user(self):
         """Initial greeting and get user name"""
-        print(f"🤖 Hello! I'm {self.name}, your friendly chatbot!")
+        print(f" Hello! I'm {self.name}, your friendly chatbot!")
         print("Let's have a conversation. Type 'bye' or 'exit' to end our chat.\n")
         
         while not self.user_name:
             name_input = input("What's your name? ").strip()
             if name_input:
                 self.user_name = name_input.title()
-                print(f"Nice to meet you, {self.user_name}! 😊\n")
+                print(f"Nice to meet you, {self.user_name}! \n")
                 break
             else:
                 print("Please tell me your name!")
@@ -98,7 +98,7 @@ What would you like to talk about?"""
         # Compliments
         elif any(word in user_input_lower for word in ['good', 'great', 'awesome', 'nice', 'cool']):
             responses = [
-                "Thank you! That's very kind of you to say! 😊",
+                "Thank you! That's very kind of you to say! ",
                 "I appreciate the compliment! You're pretty great too!",
                 "Thanks! You just made my day better!"
             ]
@@ -147,7 +147,7 @@ What would you like to talk about?"""
         """Main chatbot loop"""
         self.greet_user()
         
-        print("💬 Start chatting! (Type 'bye' to exit)")
+        print(" Start chatting! (Type 'bye' to exit)")
         print("-" * 50)
         
         while True:
@@ -157,7 +157,7 @@ What would you like to talk about?"""
                 
                 # Check if user wants to exit
                 if not user_input:
-                    print("Please say something! 😊")
+                    print("Please say something! ")
                     continue
                 
                 # Process the input and get response
@@ -165,18 +165,18 @@ What would you like to talk about?"""
                 
                 # Check for exit condition
                 if response == "exit":
-                    print(f"\n🤖 {self.name}: Goodbye, {self.user_name}! It was great chatting with you! 👋")
+                    print(f"\n {self.name}: Goodbye, {self.user_name}! It was great chatting with you! ")
                     print("Have a wonderful day!")
                     break
                 
                 # Display chatbot response
-                print(f"🤖 {self.name}: {response}\n")
+                print(f" {self.name}: {response}\n")
                 
             except KeyboardInterrupt:
-                print(f"\n\n🤖 {self.name}: Goodbye, {self.user_name}! Thanks for chatting! 👋")
+                print(f"\n\n {self.name}: Goodbye, {self.user_name}! Thanks for chatting! ")
                 break
             except Exception as e:
-                print(f"🤖 {self.name}: Oops! Something went wrong. Let's keep chatting! 😊\n")
+                print(f" {self.name}: Oops! Something went wrong. Let's keep chatting! \n")
 
 def main():
     """Main function to run the chatbot"""
@@ -189,7 +189,7 @@ def main():
     bot = SimpleChatbot()
     bot.run_chatbot()
     
-    print("\nThanks for using BroskieBot! 🚀")
+    print("\nThanks for using BroskieBot! ")
 
 if __name__ == "__main__":
     main()
